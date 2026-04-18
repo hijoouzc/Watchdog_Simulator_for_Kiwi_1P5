@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # 📖 Wiki: Watchdog Monitor Simulator (Kiwi 1P5)
+=======
+# 📖 Watchdog Monitor Simulator (Kiwi 1P5)
+>>>>>>> 5bb52c4c2388778742570bd7c1fc65205e490133
 
 Chào mừng bạn đến với tài liệu hướng dẫn sử dụng Watchdog Monitor Simulator. Đây là ứng dụng Dashboard mô phỏng hoàn chỉnh nguyên lý hoạt động của khối RTL Watchdog Supervisor (dựa trên IC TPS3431) dành cho board FPGA Gowin GW1N-UV1P5 (Kiwi 1P5).
 
