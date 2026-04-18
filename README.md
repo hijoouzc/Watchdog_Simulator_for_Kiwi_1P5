@@ -27,7 +27,7 @@ cd watchdog-simulator
 npm install
 
 # 3. Khởi chạy server phát triển
-npm start
+npm run dev
 ```
 
 Trình duyệt sẽ tự động mở ứng dụng tại địa chỉ `http://localhost:3000`.
