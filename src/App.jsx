@@ -157,11 +157,21 @@ export default function WatchdogSimulator() {
 
   // --- Handlers ---
   const handleHWKick = () => {
+    // 0x02 là bit 1: WDI_SRC (0 = HW, 1 = SW)
+    if ((regs.CTRL & 0x02) !== 0) {
+      addLog('[HW] S1 Kick bị bỏ qua do CTRL[1] (WDI_SRC) = 1.', 'warn');
+      return;
+    }
     setLastKickSrc(0); // 0 = HW S1
     setWdiKick(true);
   };
 
   const handleSWKick = () => {
+    if ((regs.CTRL & 0x02) === 0) {
+      addLog('[UART RX] NACK: KICK bị từ chối do CTRL[1] (WDI_SRC) = 0.', 'error');
+      // Trả về ACK lỗi hoặc bỏ qua
+      return;
+    }
     setLastKickSrc(1); // 1 = SW UART
     setWdiKick(true);
   };
@@ -193,7 +203,7 @@ export default function WatchdogSimulator() {
     if (cmd === CMD_WRITE) {
       len = addr === 0x0C ? 2 : 4; // arm_delay là 16-bit, còn lại 32-bit
       payloadBytes = toBytes(dataVal, len);
-    } else if (cmd === CMD_READ || cmd === CMD_GET_STATUS) {
+    } else if (cmd === CMD_READ || cmd === CMD_STATUS || cmd === CMD_KICK) {
       len = 0; // Không có data gửi đi
     }
 
