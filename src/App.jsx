@@ -536,7 +536,7 @@ export default function WatchdogSimulator() {
             </div>
 
             {/* Terminal Logs */}
-            <div className="bg-slate-800 rounded-xl border border-slate-700 shadow-xl flex flex-col overflow-hidden flex-1 min-h-[300px]">
+            <div className="bg-slate-800 rounded-xl border border-slate-700 shadow-xl flex flex-col overflow-hidden h-[300px] lg:h-[400px]">
               <div className="p-3 bg-slate-800/80 border-b border-slate-700 flex justify-between items-center">
                 <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
                   <Terminal className="w-4 h-4"/> Console
