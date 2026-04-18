@@ -414,8 +414,8 @@ export default function WatchdogSimulator() {
             </div>
 
             {/* REGISTER MAP */}
-            <div className="bg-slate-800 rounded-xl border border-slate-700 shadow-xl p-5 flex-1">
-               <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+            <div className="bg-slate-800 rounded-xl border border-slate-700 shadow-xl p-4">
+               <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3 flex items-center gap-2">
                 <Settings className="w-4 h-4"/> Register Map
               </h2>
               <div className="overflow-x-auto rounded-lg border border-slate-700">
@@ -536,7 +536,7 @@ export default function WatchdogSimulator() {
             </div>
 
             {/* Terminal Logs */}
-            <div className="bg-slate-800 rounded-xl border border-slate-700 shadow-xl flex flex-col overflow-hidden h-[300px] lg:h-[400px]">
+            <div className="bg-slate-800 rounded-xl border border-slate-700 shadow-xl flex flex-col overflow-hidden h-[250px] lg:h-[350px]">
               <div className="p-3 bg-slate-800/80 border-b border-slate-700 flex justify-between items-center">
                 <h2 className="text-sm font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
                   <Terminal className="w-4 h-4"/> Console
