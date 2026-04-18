@@ -25,6 +25,8 @@ cd watchdog-simulator
 
 # 2. Cài đặt các gói phụ thuộc
 npm install
+npm install lucide-react
+npm install -D tailwindcss postcss autoprefixer
 
 # 3. Khởi chạy server phát triển
 npm run dev
