@@ -21,7 +21,7 @@ Vì ứng dụng được xây dựng bằng thư viện React (kèm TailwindCSS
 ```bash
 # 1. Clone repository về máy
 git clone https://github.com/hijoouzc/Watchdog_Simulator_for_Kiwi_1P5
-cd watchdog-simulator
+cd Watchdog_Simulator_for_Kiwi_1P5
 
 # 2. Cài đặt các gói phụ thuộc
 npm install
