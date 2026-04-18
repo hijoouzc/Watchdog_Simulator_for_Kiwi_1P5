@@ -170,10 +170,11 @@ export default function WatchdogSimulator() {
     if ((regs.CTRL & 0x02) === 0) {
       addLog('[UART RX] NACK: KICK bị từ chối do CTRL[1] (WDI_SRC) = 0.', 'error');
       // Trả về ACK lỗi hoặc bỏ qua
-      return;
+      return false;
     }
     setLastKickSrc(1); // 1 = SW UART
     setWdiKick(true);
+    return true;
   };
 
   // --- UART Frame Generator & Parser ---
@@ -246,8 +247,9 @@ export default function WatchdogSimulator() {
         break;
 
       case CMD_KICK:
-        handleSWKick();
-        addLog(`[UART RX] ACK: Đã thực thi SW KICK.`, 'success');
+        if (handleSWKick()) {
+          addLog(`[UART RX] ACK: Đã thực thi SW KICK.`, 'success');
+        }
         break;
 
       case CMD_STATUS:
@@ -503,7 +505,7 @@ export default function WatchdogSimulator() {
                     <select 
                       className="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-sm text-white outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 font-mono disabled:opacity-50"
                       value={uartAddr} onChange={(e) => setUartAddr(e.target.value)}
-                      disabled={uartCmd === CMD_KICK || uartCmd === CMD_STATUS}
+                      disabled={parseInt(uartCmd) === CMD_KICK || parseInt(uartCmd) === CMD_STATUS}
                     >
                       <option value="0x00">0x00 (CTRL)</option>
                       <option value="0x04">0x04 (tWD)</option>
