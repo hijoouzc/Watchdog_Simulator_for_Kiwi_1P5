@@ -32,7 +32,7 @@ npm install -D tailwindcss postcss autoprefixer
 npm run dev
 ```
 
-Trình duyệt sẽ tự động mở ứng dụng tại địa chỉ `http://localhost:3000`.
+Trình duyệt sẽ tự động mở ứng dụng tại địa chỉ `http://localhost:5173`.
 
 ---
 
